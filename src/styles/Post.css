@@ -3,6 +3,8 @@
     max-width: 500px;
     border: 1px solid lightgrey;
     margin-bottom: 30px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .post_image{
@@ -17,6 +19,12 @@
     padding: 20px;
 }
 
+.post_inputBox{
+    display:flex;
+    margin-top: 10px;
+}
+
+
 
 .post_header {
     display:flex;
@@ -27,3 +35,23 @@
 .post_avatar{
     margin-right: 10px;
 }
+
+.post_input{
+    flex: 1;
+    border: none;
+    border-top: 1px solid lightgrey;
+    padding: 10px;
+}
+
+.post_button{
+    flex: 0;
+    border: none;
+    color: #6082a3;
+    background-color: transparent;
+    border-top: 1px solid lightgrey;
+}
+
+.post_comments{
+    padding-left:20px
+}
+

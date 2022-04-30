@@ -97,7 +97,7 @@ function App() {
  }
 
   const allPosts = posts.map(({id, post})=>
-  <Post key = {id} userName = {post.userName} caption ={post.caption} source = {post.imageUrl}/>);
+  <Post key = {id} postId = {id} userName = {post.userName} userSigned = {user} caption ={post.caption} source = {post.imageUrl}/>);
 
 
 
@@ -105,17 +105,7 @@ function App() {
 
   return (
     <div className="App">
-      <ImageUpload />
-
-
-
-      {user? 
-      <Button onClick = {()=> signOut(auth)}>Logout</Button>:
-      <div>
-      <Button onClick = {()=> setOpenSignIn(true)}>Sign In</Button>
-      <Button onClick = {()=> setOpen(true)}>Sign Up</Button>
-      </div>
-      }
+     
 
 <Modal
         className = {style}
@@ -206,11 +196,22 @@ function App() {
         src = "https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
         alt = "instagram logo">
         </img>
+
+        {user? 
+      <Button onClick = {()=> signOut(auth)}>Logout</Button>:
+      <div>
+      <Button onClick = {()=> setOpenSignIn(true)}>Sign In</Button>
+      <Button onClick = {()=> setOpen(true)}>Sign Up</Button>
+      </div>
+
+      }
       </div>
       {allPosts}
 
 
-      <h1>THIS BE THE INSTAGRAM CLONE</h1>
+      {user?.displayName?
+      <ImageUpload username = {user.displayName} />:null}
+
 
     </div>
   );

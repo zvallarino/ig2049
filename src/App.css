@@ -7,9 +7,18 @@
 }
 
 .app_header {
+  display: flex;
+  position: sticky;
+  top:0;
+  z-index:1;
   background-color: white;
   padding: 20px;
   border-bottom: 1px solid rgb(211, 209, 209);
+  object-fit: contain;
+  justify-content: space-between;
+}
+
+.app_headerImage{
   object-fit: contain;
 }
 
